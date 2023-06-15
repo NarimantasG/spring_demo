@@ -1,17 +1,14 @@
 package lt.narimantas.springdemo.boot_strap;
 
 import lt.narimantas.springdemo.repository.CustomerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
 public class BootStrapData implements CommandLineRunner {
-
+    @Autowired
     private CustomerRepository customerRepository;
-
-    public BootStrapData(CustomerRepository customerRepository) {
-        this.customerRepository = customerRepository;
-    }
 
     @Override
     public void run(String... args) throws Exception {
