@@ -14,4 +14,17 @@ public class CustomerService {
     public List<Customer> getAllCustomers(){
         return (List<Customer>) customerRepository.findAll();
     }
+
+    public Customer getCustomer(int id) {
+        return customerRepository.findById(id).get();
+    }
+    public Customer getCustomerByNumber(int id){
+        return customerRepository.findByCustomerNumber(id).get();
+    }
+    public List<Customer> getCustomerLikeName (String name){
+        return (List<Customer>)customerRepository.findByCustomerNameLike(name);
+    }
+    public List<Customer> getCustomerLikeNameByQuery (String name){
+        return customerRepository.getCustomerList(name);
+    }
 }
